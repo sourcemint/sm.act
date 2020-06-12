@@ -1,0 +1,13 @@
+{
+    "name": "sm.act",
+    "version": "0.0.1",
+    "dependencies": {
+        "yamljs": "^0.3.0"
+    },
+    "devDependencies": {
+        "bash.origin.lib": "^0.5.0-pre.0"
+    },
+    "scripts": {
+        "test": "bash.origin.test examples"
+    }
+}
