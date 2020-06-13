@@ -1,0 +1,58 @@
+#!/usr/bin/env inf
+{
+    "#": "gi0.PINF.it/core/v0",
+
+    "#": {
+        "/.~/gi0.Sourcemint.org~sm.act/workflows": "sm.act"
+    },
+
+    ":github.actions:": "/.~/gi0.Sourcemint.org~sm.act/workflows @ github.com/actions/v0",
+
+    "gi0.PINF.it/build/v0 @ # /": (inf () >>>
+        {
+            "gi0.PINF.it/build/v0 @ # :github.actions: workflow() /._/gi0.Sourcemint.org~sm.act/workflows/tests/01-Github-Actions/01": (yaml () >>>
+                name: 01-Github-Actions/01
+                on: [push]
+                jobs:
+                    Run:
+                        runs-on: ubuntu-latest
+                        strategy:
+                            matrix:
+                                node-version: [13.x]
+                        steps:
+                            - uses: actions/checkout@v1
+                            - name: Act
+                              run: ls -a
+            <<<),
+            "gi0.PINF.it/build/v0 @ # :github.actions: workflow() /._/gi0.Sourcemint.org~sm.act/workflows/tests/01-Github-Actions/02": (json () >>>
+                {
+                    "name": "01-Github-Actions/02",
+                    "on": [
+                        "push"
+                    ],
+                    "jobs": {
+                        "Run": {
+                            "runs-on": "ubuntu-latest",
+                            "strategy": {
+                                "matrix": {
+                                    "node-version": [
+                                        "13.x"
+                                    ]
+                                }
+                            },
+                            "steps": [
+                                {
+                                    "uses": "actions/checkout@v1"
+                                },
+                                {
+                                    "name": "Act",
+                                    "run": "ls -a"
+                                }
+                            ]
+                        }
+                    }
+                }
+            <<<)
+        }
+    <<<)
+}

@@ -1,0 +1,24 @@
+---
+name: 02-CircleCI-Pipelines_01
+jobs:
+    Run:
+        machine:
+            image: 'ubuntu-1604:201903-01'
+        steps:
+            - checkout
+            -
+                run:
+                    name: Act
+                    command: 'ls -a'
+---
+name: 02-CircleCI-Pipelines_02
+jobs:
+    Run:
+        machine:
+            image: 'ubuntu-1604:201903-01'
+        steps:
+            - checkout
+            -
+                run:
+                    name: Act
+                    command: 'ls -a'

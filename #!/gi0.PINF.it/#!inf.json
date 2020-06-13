@@ -1,0 +1,4 @@
+{
+    "github.com/actions/v0 #": "./github_actions_v0.",
+    "circleci.com/pipelines/v0 #": "./circleci_pipelines_v0."
+}

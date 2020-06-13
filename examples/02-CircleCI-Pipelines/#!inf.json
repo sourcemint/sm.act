@@ -1,0 +1,48 @@
+#!/usr/bin/env inf
+{
+    "#": "gi0.PINF.it/core/v0",
+
+    "#": {
+        "/.~/gi0.Sourcemint.org~sm.act/workflows": "sm.act"
+    },
+
+    ":circleci.pipelines:": "/.~/gi0.Sourcemint.org~sm.act/workflows @ circleci.com/pipelines/v0",
+
+    "gi0.PINF.it/build/v0 @ # /": (inf () >>>
+        {
+            "gi0.PINF.it/build/v0 @ # :circleci.pipelines: workflow() /._/gi0.Sourcemint.org~sm.act/workflows/tests/02-CircleCI-Pipelines/01": (yaml () >>>
+                name: 02-CircleCI-Pipelines_01
+                jobs:
+                    Run:
+                        machine:
+                            image: ubuntu-1604:201903-01
+                        steps:
+                            - checkout
+                            - run:
+                                name: Act
+                                command: ls -a
+            <<<),
+            "gi0.PINF.it/build/v0 @ # :circleci.pipelines: workflow() /._/gi0.Sourcemint.org~sm.act/workflows/tests/02-CircleCI-Pipelines/02": (json () >>>
+                {
+                    "name": "02-CircleCI-Pipelines_02",
+                    "jobs": {
+                        "Run": {
+                            "machine": {
+                                "image": "ubuntu-1604:201903-01"
+                            },
+                            "steps": [
+                                "checkout",
+                                {
+                                    "run": {
+                                        "name": "Act",
+                                        "command": "ls -a"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            <<<)
+        }
+    <<<)
+}
