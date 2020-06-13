@@ -59,8 +59,12 @@ exports.forLIB = function (LIB) {
                 fi
 
                 git reset --hard
+
+                echo "Pulling latest changes from remote 'sm' and branch 'sm/$branch'."
                 git pull sm sm/$branch || true
 
+                echo "Merging latest changes from remote 'origin' and branch '$branch'."
+                git fetch origin $branch
                 git merge origin/$branch -m "[gi0.Sourcemint.org/sm.act] Merge from branch '$branch' at commit '$commit'."
 
             `, workspace.path);
