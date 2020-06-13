@@ -18,10 +18,28 @@ jobs:
                 run:
                     name: Act
                     command: 'ls -a'
+    dabadef-Run:
+        machine:
+            image: 'ubuntu-1604:201903-01'
+        steps:
+            - checkout
+            -
+                run:
+                    name: Act
+                    command: 'ls -a'
+    fadadab-Run:
+        machine:
+            image: 'ubuntu-1604:201903-01'
+        steps:
+            - checkout
+            -
+                run:
+                    name: Act
+                    command: 'ls -a'
 workflows:
     02-CircleCI-Pipelines_01:
         jobs:
-            - 771d26a-Run
+            - dabadef-Run
     02-CircleCI-Pipelines_02:
         jobs:
-            - 8f45ad6-Run
+            - fadadab-Run
