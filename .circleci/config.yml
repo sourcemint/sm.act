@@ -1,23 +1,5 @@
 version: 2.1
 jobs:
-    771d26a-Run:
-        machine:
-            image: 'ubuntu-1604:201903-01'
-        steps:
-            - checkout
-            -
-                run:
-                    name: Act
-                    command: 'ls -a'
-    8f45ad6-Run:
-        machine:
-            image: 'ubuntu-1604:201903-01'
-        steps:
-            - checkout
-            -
-                run:
-                    name: Act
-                    command: 'ls -a'
     dabadef-Run:
         machine:
             image: 'ubuntu-1604:201903-01'
