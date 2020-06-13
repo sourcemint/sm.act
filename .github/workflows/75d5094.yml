@@ -1,0 +1,16 @@
+name: 01-Github-Actions/02
+on:
+    - push
+jobs:
+    Run:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version:
+                    - 13.x
+        steps:
+            -
+                uses: actions/checkout@v1
+            -
+                name: Act
+                run: 'ls -a'
